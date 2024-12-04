@@ -1,15 +1,30 @@
 <template>
-  <header class="flex justify-between items-center border-b border-lines p-5">
+  <header
+    class="flex justify-between items-center border-b border-lines p-5 text-base_true_gray"
+  >
     <!-- LOGO -->
-    <div class="text-secondary-DEFAULT text-base">neven-mitrovic</div>
-    <div class="flex items-center justify-center">
-      <UIcon name="ri:menu-fill" class="w-5 h-5 text-primary-DEFAULT" />
-    </div>
+    <div class="text-base">neven-mitrovic</div>
+    <button class="flex items-center justify-center" @click="toggleMenu">
+      <UIcon name="ri:menu-fill" class="w-5 h-5 hover:text-base_true_white" />
+    </button>
   </header>
+  <nav v-if="isMenuOpen">
+    <li class="list-none">
+      <ul
+        v-for="link in navigationLinks"
+        :key="link.title"
+        class="border-b border-lines p-4"
+      >
+        <NuxtLink :to="link.path" exact-active-class="text-base_true_white">
+          {{ link.title }}
+        </NuxtLink>
+      </ul>
+    </li>
+  </nav>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { navigationLinks } from "~/data";
 
 const isMenuOpen = ref(false);
 
