@@ -8,19 +8,21 @@
       <UIcon name="ri:menu-fill" class="w-5 h-5 hover:text-base_true_white" />
     </button>
   </header>
-  <nav v-if="isMenuOpen">
-    <li class="list-none">
-      <ul
-        v-for="link in navigationLinks"
-        :key="link.title"
-        class="border-b border-lines p-4"
-      >
-        <NuxtLink :to="link.path" exact-active-class="text-base_true_white">
-          {{ link.title }}
-        </NuxtLink>
-      </ul>
-    </li>
-  </nav>
+  <div v-if="isMenuOpen" class="relative">
+    <nav class="absolute top-1 z-10 w-full bg-portfolio-primary-50">
+      <li class="list-none">
+        <ul
+          v-for="link in navigationLinks"
+          :key="link.title"
+          class="border-b border-lines p-4"
+        >
+          <NuxtLink :to="link.path" exact-active-class="text-base_true_white">
+            {{ link.title }}
+          </NuxtLink>
+        </ul>
+      </li>
+    </nav>
+  </div>
 </template>
 
 <script setup lang="ts">
