@@ -16,7 +16,11 @@
           :key="link.title"
           class="border-b border-lines p-4"
         >
-          <NuxtLink :to="link.path" exact-active-class="text-base_true_white">
+          <NuxtLink
+            :to="link.path"
+            exact-active-class="text-base_true_white"
+            @click="toggleMenu"
+          >
             {{ link.title }}
           </NuxtLink>
         </ul>
