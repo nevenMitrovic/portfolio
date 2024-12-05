@@ -1,4 +1,4 @@
-import type { NavigationLinkType } from "@/interfaces/index";
+import type { NavigationLinkType, FooterSocial } from "@/interfaces/index";
 
 export const navigationLinks: NavigationLinkType[] = [
   {
@@ -18,3 +18,14 @@ export const navigationLinks: NavigationLinkType[] = [
     path: "/contact-me",
   },
 ];
+
+export const footerData: FooterSocial = {
+  title: "find me in:",
+  social: [
+    {
+      icon: "ri:linkedin-box-fill",
+      path: "https://www.linkedin.com/in/neven-mitrovic-1517b3217/",
+    },
+    { icon: "ri:github-fill", path: "https://github.com/nevenMitrovic" },
+  ],
+};

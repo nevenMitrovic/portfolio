@@ -3,6 +3,7 @@
     <div class="bg-portfolio-primary-50 border border-lines rounded-md">
       <Header />
       <slot />
+      <Footer />
     </div>
   </div>
 </template>
