@@ -1,4 +1,8 @@
-import type { NavigationLinkType, FooterSocial } from "@/interfaces/index";
+import type {
+  NavigationLinkType,
+  FooterSocial,
+  SelectInfoType,
+} from "@/interfaces/index";
 
 export const navigationLinks: NavigationLinkType[] = [
   {
@@ -28,4 +32,41 @@ export const footerData: FooterSocial = {
     },
     { icon: "ri:github-fill", path: "https://github.com/nevenMitrovic" },
   ],
+};
+
+export const selectInfoData: SelectInfoType = {
+  sections: [
+    {
+      id: "personal",
+      title: "personal-info",
+      folders: [
+        { color: "portfolio-accent-peach", title: "bio", files: ["bio"] },
+        {
+          color: "portfolio-accent-green",
+          title: "interests",
+          files: ["sport", "hiking", "food", "partizan"],
+        },
+        {
+          color: "portfolio-secondary-purple",
+          title: "education",
+          files: ["high-school", "university"],
+        },
+      ],
+    },
+    {
+      id: "professional",
+      title: "professional-info",
+      folders: [
+        {
+          color: "portfolio-accent-peach",
+          title: "resume",
+          files: ["resume"],
+        },
+      ],
+    },
+  ],
+  contacts: {
+    id: "contacts",
+    contacts: ["+381656196083", "nevenmitrovic4@gmail.com"],
+  },
 };

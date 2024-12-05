@@ -12,3 +12,25 @@ interface Social {
   icon: string;
   path: string;
 }
+
+export interface SelectInfoType {
+  sections: AboutSectionType[];
+  contacts: ContactSectionType;
+}
+
+interface AboutSectionType {
+  id: "personal" | "professional" | "contacts";
+  title: string;
+  folders: AboutFolderType[];
+}
+
+interface AboutFolderType {
+  color: string;
+  title: "bio" | "interests" | "education" | "resume";
+  files: string[];
+}
+
+interface ContactSectionType {
+  id: "contacts";
+  contacts: string[];
+}

@@ -9,4 +9,7 @@
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Header from '~/components/Common/Header.vue';
+import Footer from '~/components/Common/Footer.vue';
+</script>
