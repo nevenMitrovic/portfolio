@@ -34,3 +34,15 @@ interface ContactSectionType {
   id: "contacts";
   contacts: string[];
 }
+
+export interface FileDataType {
+  id:
+    | "sport"
+    | "hiking"
+    | "food"
+    | "partizan"
+    | "high-school"
+    | "university"
+    | "resume";
+  data: string;
+}
