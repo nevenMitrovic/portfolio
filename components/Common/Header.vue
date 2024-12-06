@@ -4,9 +4,11 @@
   >
     <!-- LOGO -->
     <div class="text-base">neven-mitrovic</div>
-    <button class="flex items-center justify-center" @click="toggleMenu">
-      <UIcon name="ri:menu-fill" class="w-5 h-5 hover:text-base_true_white" />
-    </button>
+    <div v-if="commonStore.isMobile">
+      <button class="flex items-center justify-center" @click="toggleMenu">
+        <UIcon name="ri:menu-fill" class="w-5 h-5 hover:text-base_true_white" />
+      </button>
+    </div>
   </header>
   <div v-if="isMenuOpen" class="relative">
     <nav class="absolute top-1 z-10 w-full bg-portfolio-primary-50">
@@ -31,6 +33,9 @@
 
 <script setup lang="ts">
 import { navigationLinks } from "~/data";
+import { useCommonStore } from "~/store/commonStore";
+
+const commonStore = useCommonStore();
 
 const isMenuOpen = ref(false);
 
