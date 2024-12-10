@@ -4,6 +4,7 @@ import type {
   SelectInfoType,
   FileDataType,
   CodeSnippetType,
+  FilterDataType,
 } from "@/interfaces/index";
 
 export const navigationLinks: NavigationLinkType[] = [
@@ -143,3 +144,11 @@ export const useAxiosExample: CodeSnippetType = {
     "This is a code snippet from my project named Who Brings, created 7 months ago. It includes a custom composable called useAxios.",
   time: "5 months ago",
 };
+
+export const filterData: FilterDataType[] = [
+  { id: "react", icon: "ri:reactjs-line" },
+  { id: "vue", icon: "ri:vuejs-line" },
+  { id: "nuxt", icon: "ri:vuejs-line" },
+  { id: "express", icon: "ri:nodejs-line" },
+  { id: "nest", icon: "ri:nodejs-line" },
+];

@@ -42,7 +42,7 @@ export default {
         },
         "portfolio-gradient": {
           from: "#4D5BCE",
-          to: "#43D9AD"
+          to: "#43D9AD",
         },
         lines: "#1E2D3D",
         base_true_white: "#FFFFFF",
@@ -52,7 +52,7 @@ export default {
     },
   },
   plugins: [],
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "@tailwindcss/forms"],
   tailwindcss: {
     // Options
   },

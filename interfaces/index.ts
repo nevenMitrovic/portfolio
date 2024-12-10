@@ -55,3 +55,7 @@ export interface CodeSnippetType {
   details: string;
   time: string;
 }
+ export interface FilterDataType {
+  id: string;
+  icon: string;
+ }
