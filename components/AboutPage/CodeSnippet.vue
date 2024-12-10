@@ -16,32 +16,52 @@
           <p class="text-portfolio-secondary-purple text-sm font-bold">
             @nevenmitrovic
           </p>
-          <p class="text-base_true_gray text-xs">5 months ago</p>
+          <p class="text-base_true_gray text-xs">{{ snippetData.time }}</p>
         </div>
       </div>
       <div class="flex items-center justify-center">
-        <button class="flex items-center justify-center gap-1">
+        <button
+          class="flex items-center justify-center gap-1"
+          @click="openDetails"
+        >
           <UIcon
             name="ri:chat-smile-3-fill"
             class="w-4 h-4 text-base_true_gray"
           />
-          <p class="text-sm base_true_white">details</p>
+          <p class="text-sm text-base_true_white">details</p>
         </button>
       </div>
     </div>
     <!-- CODE -->
     <div>
-      <div class="pb-4">
-        <div class="rounded-xl">
+      <div class="pb-4" :class="showDetails && 'border-b border-lines'">
+        <div>
           <ClientOnly>
-            <highlightjs autodetect :code="useAxiosExample" />
+            <highlightjs
+              autodetect
+              :code="snippetData.code"
+              class="rounded-xl overflow-hidden"
+            />
           </ClientOnly>
         </div>
+      </div>
+      <div v-if="showDetails" class="flex text-base_true_gray text-sm pt-4">
+        <p>{{ snippetData.details }}</p>
+        <button class="flex items-start" @click="closeDetails">
+          <UIcon name="ri:close-fill" class="w-5 h-5 text-base_true_gray" />
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useAxiosExample } from "~/data";
+import type { CodeSnippetType } from "~/interfaces";
+
+defineProps<{ snippetData: CodeSnippetType }>();
+
+const showDetails = ref(false);
+
+const openDetails = () => (showDetails.value = true);
+const closeDetails = () => (showDetails.value = false);
 </script>

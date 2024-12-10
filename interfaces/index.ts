@@ -49,3 +49,9 @@ export interface FileDataType {
     | "movies";
   data: string;
 }
+
+export interface CodeSnippetType {
+  code: string;
+  details: string;
+  time: string;
+}

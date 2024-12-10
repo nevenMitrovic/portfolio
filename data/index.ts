@@ -3,6 +3,7 @@ import type {
   FooterSocial,
   SelectInfoType,
   FileDataType,
+  CodeSnippetType,
 } from "@/interfaces/index";
 
 export const navigationLinks: NavigationLinkType[] = [
@@ -115,7 +116,8 @@ export const filesData: FileDataType[] = [
   },
 ];
 
-export const useAxiosExample = `export function useAxios(): AxiosInstance {
+export const useAxiosExample: CodeSnippetType = {
+  code: `export function useAxios(): AxiosInstance {
   const axiosInstance: AxiosInstance = axios.create({
       baseURL: import.meta.env.VITE_API_URL
   });
@@ -136,4 +138,8 @@ export const useAxiosExample = `export function useAxios(): AxiosInstance {
       }
   )
   return axiosInstance;
-}`;
+}`,
+  details:
+    "This is a code snippet from my project named Who Brings, created 7 months ago. It includes a custom composable called useAxios.",
+  time: "5 months ago",
+};
