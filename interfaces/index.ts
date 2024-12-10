@@ -37,12 +37,15 @@ interface ContactSectionType {
 
 export interface FileDataType {
   id:
+    | "bio"
     | "sport"
     | "hiking"
     | "food"
     | "partizan"
     | "high-school"
     | "university"
-    | "resume";
+    | "resume"
+    | "books"
+    | "movies";
   data: string;
 }

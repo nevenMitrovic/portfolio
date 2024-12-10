@@ -6,19 +6,32 @@
       @on-select-section="selectedTitles.section = $event"
     />
     <div>
-      <p class="px-7">
+      <div class="px-7 mb-10">
+        <!-- TITLE -->
         // {{ selectedTitles.section }}
         <span class="text-base_true_gray">/ {{ selectedTitles.file }}</span>
-      </p>
+        <!-- FILE DATA -->
+        <p class="pt-4">{{ getFileText() }}</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import SelectInfo from "~/components/AboutPage/SelectInfo.vue";
+import { filesData } from "~/data";
 
 const selectedTitles = reactive({
   file: "bio",
   section: "personal-info",
 });
+
+const getFileText = (): string => {
+  const selected = filesData.find((file) => file.id == selectedTitles.file);
+  if (selected) {
+    return selected.data;
+  } else {
+    return "";
+  }
+};
 </script>

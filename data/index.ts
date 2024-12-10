@@ -2,6 +2,7 @@ import type {
   NavigationLinkType,
   FooterSocial,
   SelectInfoType,
+  FileDataType,
 } from "@/interfaces/index";
 
 export const navigationLinks: NavigationLinkType[] = [
@@ -44,7 +45,7 @@ export const selectInfoData: SelectInfoType = {
         {
           color: "portfolio-accent-green",
           title: "interests",
-          files: ["sport", "hiking", "food", "partizan"],
+          files: ["sport", "hiking", "food", "partizan", "books", "movies"],
         },
         {
           color: "portfolio-secondary-purple",
@@ -70,3 +71,10 @@ export const selectInfoData: SelectInfoType = {
     contacts: ["+381656196083", "nevenmitrovic4@gmail.com"],
   },
 };
+
+export const filesData: FileDataType[] = [
+  {
+    id: "bio",
+    data: "Frontend Developer with one year of professional experience, specializing in frameworks such as Vue, Nuxt, and React. Skilled in crafting visually appealing and responsive designs using TailwindCSS, complemented by a solid foundation in Bootstrap. Beyond the frontend, I have knowledge of backend technologies like Express.js and Nest.js, along with proficiency in working with MongoDB databases. Programming is my passion, and I am constantly driven to expand my knowledge and refine my skills. Ready to take on new challenges and contribute to impactful projects!",
+  },
+];
