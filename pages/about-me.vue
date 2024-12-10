@@ -11,7 +11,7 @@
         // {{ selectedTitles.section }}
         <span class="text-base_true_gray">/ {{ selectedTitles.file }}</span>
         <!-- FILE DATA -->
-        <p class="pt-4">{{ getFileText() }}</p>
+        <p class="pt-4 text-base text-base_true_gray">{{ getFileText() }}</p>
       </div>
     </div>
   </div>
