@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col gap-1 pb-10 text-base text-base_true_gray">
-    <div v-for="section in selectInfoData.sections" :key="section.id">
+    <div v-for="section in infoData.sections" :key="section.id">
       <!-- TITLE -->
       <div
         class="bg-lines flex items-center gap-3 pl-7 py-2 text-base_true_white"
@@ -75,7 +75,7 @@
     <!-- CONTACTS -->
     <div
       class="bg-lines flex items-center gap-3 pl-7 py-2 text-base_true_white"
-      @click="toggleVisibility({ section: selectInfoData.contacts.id })"
+      @click="toggleVisibility({ section: infoData.contacts.id })"
     >
       <UIcon
         v-if="!isOpen.sections.contacts"
@@ -91,7 +91,7 @@
     </div>
     <div
       v-if="isOpen.sections.contacts"
-      v-for="contact in selectInfoData.contacts.contacts"
+      v-for="contact in infoData.contacts.contacts"
       :key="contact"
       class="flex items-center gap-3 pl-7 py-2 text-base_true_gray"
     >
@@ -107,7 +107,9 @@
 </template>
 
 <script setup lang="ts">
-import { selectInfoData } from "~/data";
+import type { SelectInfoType } from "~/interfaces";
+
+defineProps<{ infoData: SelectInfoType }>();
 
 const emit = defineEmits<{
   (event: "onSelectFile", file: string): void;

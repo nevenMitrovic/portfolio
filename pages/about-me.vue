@@ -2,6 +2,7 @@
   <div class="bg-portfolio-primary-50 pb-10">
     <div class="py-5 px-7 text-sm">_about-me</div>
     <SelectInfo
+      :info-data="selectInfoData"
       @on-select-file="selectedTitles.file = $event"
       @on-select-section="selectedTitles.section = $event"
     />
@@ -34,7 +35,7 @@
 <script setup lang="ts">
 import SelectInfo from "~/components/AboutPage/SelectInfo.vue";
 import CodeSnippet from "~/components/AboutPage/CodeSnippet.vue";
-import { filesData, useAxiosExample } from "~/data";
+import { filesData, selectInfoData, useAxiosExample } from "~/data";
 
 const selectedTitles = reactive({
   file: "bio",

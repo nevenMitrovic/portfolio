@@ -1,0 +1,7 @@
+<template>
+  <div class="bg-portfolio-primary-50 pb-10">
+    <div class="py-5 px-7 text-sm">_projects</div>
+  </div>
+</template>
+
+<script setup lang="ts"></script>
