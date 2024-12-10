@@ -114,3 +114,26 @@ export const filesData: FileDataType[] = [
     data: "From June 2021 to July 2023, I worked as a live betting operator at Exefeed Doo. My responsibilities included monitoring betting markets from the source, comparing them with other bookmakers, and addressing any discrepancies in the markets. Since February 2024, I have been involved in developing the Osiguraj Lako web application for online insurance services as a Frontend Developer.",
   },
 ];
+
+export const useAxiosExample = `export function useAxios(): AxiosInstance {
+  const axiosInstance: AxiosInstance = axios.create({
+      baseURL: import.meta.env.VITE_API_URL
+  });
+  axiosInstance.interceptors.request.use(
+      async (config: InternalAxiosRequestConfig): Promise<InternalAxiosRequestConfig> => {
+          return config;
+      },
+      (error: any) => {
+         Promise.reject(error);
+      }
+  );
+  axiosInstance.interceptors.response.use(
+      async (config: AxiosResponse): Promise<AxiosResponse> => {
+          return config;
+      },
+      (error: any) => {
+          Promise.reject(error);
+      }
+  )
+  return axiosInstance;
+}`;

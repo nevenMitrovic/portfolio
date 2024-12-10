@@ -6,12 +6,26 @@
       @on-select-section="selectedTitles.section = $event"
     />
     <div>
+      <!-- INFO -->
       <div class="px-7 mb-10">
-        <!-- TITLE -->
         // {{ selectedTitles.section }}
         <span class="text-base_true_gray">/ {{ selectedTitles.file }}</span>
-        <!-- FILE DATA -->
-        <p class="pt-4 text-base text-base_true_gray">{{ getFileText() }}</p>
+        <p
+          v-if="selectedTitles.file"
+          class="pt-4 text-base text-base_true_gray"
+        >
+          {{ getFileText() }}
+        </p>
+        <p v-else class="pt-4 text-base text-base_true_gray">
+          Select specific information about me!
+        </p>
+      </div>
+      <!-- CODE SNIPPETS -->
+      <div class="px-7">
+        <div class="text-base_true_white mb-7">// Code snippet showcase:</div>
+        <div>
+          <CodeSnippet />
+        </div>
       </div>
     </div>
   </div>
@@ -19,6 +33,7 @@
 
 <script setup lang="ts">
 import SelectInfo from "~/components/AboutPage/SelectInfo.vue";
+import CodeSnippet from "~/components/AboutPage/CodeSnippet.vue";
 import { filesData } from "~/data";
 
 const selectedTitles = reactive({
