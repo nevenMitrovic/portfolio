@@ -15,8 +15,7 @@
         <div
           v-for="tag in props.tags"
           :key="tag.id"
-          class="flex items-center justify-center rounded p-1"
-          :class="tag.color"
+          :class="`flex items-center justify-center rounded p-1 ${colorVariants[tag.color as keyof typeof colorVariants]}`"
         >
           <UIcon :name="tag.icon" class="w-5 h-5 text-base_true_black" />
         </div>
@@ -46,4 +45,10 @@
 import type { ProjectCardType } from "~/interfaces";
 
 defineProps<{ props: ProjectCardType; index: number }>();
+
+const colorVariants = {
+  node_green: "bg-node_green",
+  vue_green: "bg-vue_green",
+  react_blue: "bg-react_blue",
+};
 </script>

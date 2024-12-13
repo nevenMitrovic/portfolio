@@ -62,6 +62,7 @@ const getSelectedFilterTitle = () => {
     }
   }
   if (filters.length === 0) {
+    emit("updateFilter", filters);
     return "all";
   } else {
     if (filters.length == Object.keys(selectedFilters).length) {

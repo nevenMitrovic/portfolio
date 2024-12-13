@@ -7,6 +7,7 @@ export default {
     "./plugins/**/*.{js,ts}",
     "./app.vue",
     "./error.vue",
+    "./nuxt.config.{js,ts}",
   ],
   theme: {
     extend: {
@@ -45,6 +46,9 @@ export default {
           to: "#43D9AD",
         },
         lines: "#1E2D3D",
+        node_green: "#417E38",
+        vue_green: "#81D4AF",
+        react_blue: "#86E1F9",
         base_true_white: "#FFFFFF",
         base_true_black: "#01080E",
         base_true_gray: "#607B96",

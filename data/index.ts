@@ -158,8 +158,8 @@ export const projectCardsData: ProjectCardType[] = [
   {
     id: "who-brings",
     tags: [
-      { id: "express", color: "bg-[#417E38]", icon: "ri:nodejs-line" },
-      { id: "vue", color: "bg-[#81D4AF]", icon: "ri:vuejs-line" },
+      { id: "express", color: "node_green", icon: "ri:nodejs-line" },
+      { id: "vue", color: "vue_green", icon: "ri:vuejs-line" },
     ],
     img: "./whobrings.png",
     description: "Fullstack application for creating and managing event lists.",
@@ -168,8 +168,8 @@ export const projectCardsData: ProjectCardType[] = [
   {
     id: "employees-app",
     tags: [
-      { id: "nest", color: "bg-[#417E38]", icon: "ri:nodejs-line" },
-      { id: "react", color: "bg-[#86E1F9]", icon: "ri:reactjs-line" },
+      { id: "nest", color: "node_green", icon: "ri:nodejs-line" },
+      { id: "react", color: "react_blue", icon: "ri:reactjs-line" },
     ],
     img: "./employee.png",
     description: "Full-stack application for manage employee data.",
@@ -177,9 +177,16 @@ export const projectCardsData: ProjectCardType[] = [
   },
   {
     id: "weather-app",
-    tags: [{ id: "vue", color: "bg-[#81D4AF]", icon: "ri:vuejs-line" }],
+    tags: [{ id: "vue", color: "vue_green", icon: "ri:vuejs-line" }],
     img: "./weather.png",
     description: "Application provides weather data for selected locations.",
     link: "https://github.com/nevenMitrovic/weather-app",
+  },
+  {
+    id: "portfolio",
+    tags: [{ id: "nuxt", color: "vue_green", icon: "ri:vuejs-line" }],
+    img: "./portfolio.png",
+    description: "My official website to showcase my skills and contact me.",
+    link: "/",
   },
 ];
