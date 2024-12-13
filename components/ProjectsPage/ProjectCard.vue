@@ -1,32 +1,49 @@
 <template>
   <div>
     <div class="text-base pb-4">
-      <span class="font-bold text-portfolio-secondary-purple">Project 1 </span>
-      <span class="text-base_true_gray">/ whobrings</span>
+      <span class="font-bold text-portfolio-secondary-purple"
+        >Project {{ index }}
+      </span>
+      <span class="text-base_true_gray"> / {{ props.id }}</span>
     </div>
     <div
       class="relative flex flex-col justify-center bg-portfolio-primary-100 border border-lines rounded-xl overflow-hidden"
     >
       <div
-        class="absolute flex items-center justify-center top-3 right-3 bg-[#81D4AF] rounded p-1"
+        class="flex items-center justify-center gap-1 absolute top-3 right-3"
       >
-        <UIcon name="ri:vuejs-line" class="w-5 h-5 text-base_true_black" />
+        <div
+          v-for="tag in props.tags"
+          :key="tag.id"
+          class="flex items-center justify-center rounded p-1"
+          :class="tag.color"
+        >
+          <UIcon :name="tag.icon" class="w-5 h-5 text-base_true_black" />
+        </div>
       </div>
       <div class="border-b border-lines">
-        <NuxtImg src="./whobrings.png" alt="whobrings.png" />
+        <NuxtImg :src="props.img" :alt="props.id" />
       </div>
       <div class="px-8 py-6 text-base_true_gray">
-        Fullstack application for creating and managing event lists.
+        {{ props.description }}
       </div>
       <div class="flex justify-start px-8 pb-6">
-        <button
-          class="bg-[#1C2B3A] text-sm text-base_true_white rounded-md py-2 px-3"
-        >
-          view-project
+        <button class="bg-[#1C2B3A] rounded-md py-2 px-3">
+          <NuxtLink
+            :to="props.link"
+            target="_blank"
+            class="text-sm text-base_true_white"
+          >
+            view-project
+          </NuxtLink>
         </button>
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { ProjectCardType } from "~/interfaces";
+
+defineProps<{ props: ProjectCardType; index: number }>();
+</script>

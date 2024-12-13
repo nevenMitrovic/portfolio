@@ -5,6 +5,7 @@ import type {
   FileDataType,
   CodeSnippetType,
   FilterDataType,
+  ProjectCardType,
 } from "@/interfaces/index";
 
 export const navigationLinks: NavigationLinkType[] = [
@@ -151,4 +152,34 @@ export const filterData: FilterDataType[] = [
   { id: "nuxt", icon: "ri:vuejs-line" },
   { id: "express", icon: "ri:nodejs-line" },
   { id: "nest", icon: "ri:nodejs-line" },
+];
+
+export const projectCardsData: ProjectCardType[] = [
+  {
+    id: "who-brings",
+    tags: [
+      { id: "express", color: "bg-[#417E38]", icon: "ri:nodejs-line" },
+      { id: "vue", color: "bg-[#81D4AF]", icon: "ri:vuejs-line" },
+    ],
+    img: "./whobrings.png",
+    description: "Fullstack application for creating and managing event lists.",
+    link: "https://github.com/nevenMitrovic/whobrings",
+  },
+  {
+    id: "employees-app",
+    tags: [
+      { id: "nest", color: "bg-[#417E38]", icon: "ri:nodejs-line" },
+      { id: "react", color: "bg-[#86E1F9]", icon: "ri:reactjs-line" },
+    ],
+    img: "./employee.png",
+    description: "Full-stack application for manage employee data.",
+    link: "https://github.com/nevenMitrovic/employees-app",
+  },
+  {
+    id: "weather-app",
+    tags: [{ id: "vue", color: "bg-[#81D4AF]", icon: "ri:vuejs-line" }],
+    img: "./weather.png",
+    description: "Application provides weather data for selected locations.",
+    link: "https://github.com/nevenMitrovic/weather-app",
+  },
 ];

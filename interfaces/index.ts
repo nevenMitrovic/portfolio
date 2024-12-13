@@ -55,7 +55,22 @@ export interface CodeSnippetType {
   details: string;
   time: string;
 }
- export interface FilterDataType {
+
+export interface FilterDataType {
   id: string;
   icon: string;
- }
+}
+
+export interface ProjectCardType {
+  id: string;
+  tags: TagType[];
+  img: string;
+  description: string;
+  link: string;
+}
+
+interface TagType {
+  id: string;
+  color: string;
+  icon: string;
+}
