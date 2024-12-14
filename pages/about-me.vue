@@ -24,7 +24,7 @@
       <!-- CODE SNIPPETS -->
       <div class="px-7">
         <div class="text-base_true_white mb-7">// Code snippet showcase:</div>
-        <div>
+        <div class="max-w-full">
           <CodeSnippet :snippet-data="useAxiosExample" />
         </div>
       </div>

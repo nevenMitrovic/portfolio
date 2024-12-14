@@ -37,6 +37,10 @@
   font-style: normal;
 }
 
+pre {
+  @apply !whitespace-pre-wrap !break-words !overflow-hidden;
+}
+
 body {
   @apply font-custom;
 }
