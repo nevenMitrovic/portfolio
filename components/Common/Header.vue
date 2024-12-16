@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex justify-between sm:justify-start items-center border-b border-lines h-[56px] px-5 sm:pl-5 text-base_true_gray"
+    class="flex justify-between sm:justify-start items-center border-b border-lines h-[56px] px-5 md:px-0 md:pl-5 text-base_true_gray"
   >
     <div
       class="flex items-center text-base md:border-r w-full md:w-3/12 border-lines h-full"
