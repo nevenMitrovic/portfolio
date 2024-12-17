@@ -38,7 +38,7 @@
 }
 
 pre {
-  @apply !whitespace-pre-wrap !break-words !overflow-hidden;
+  @apply !whitespace-pre-wrap !break-words !overflow-hidden !text-left;
 }
 
 body {
