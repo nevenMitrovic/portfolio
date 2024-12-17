@@ -21,8 +21,8 @@
         >
           <NuxtLink
             :to="link.path"
-            class="py-4 px-5 hover:text-base_true_white hover:border-b-2 hover:border-portfolio-accent-orange"
-            exact-active-class="text-base_true_white"
+            class="py-4 px-5 hover:text-base_true_white hover:border-b hover:border-portfolio-accent-orange"
+            exact-active-class="text-base_true_white border-b border-portfolio-accent-orange"
           >
             {{ link.title }}
           </NuxtLink>
@@ -36,8 +36,8 @@
         >
           <NuxtLink
             :to="link.path"
-            class="py-4 px-5 hover:text-base_true_white hover:border-b-2 hover:border-portfolio-accent-orange"
-            exact-active-class="text-base_true_white"
+            class="py-4 px-5 hover:text-base_true_white hover:border-b hover:border-portfolio-accent-orange"
+            exact-active-class="text-base_true_white border-b border-portfolio-accent-orange"
           >
             {{ link.title }}
           </NuxtLink>
