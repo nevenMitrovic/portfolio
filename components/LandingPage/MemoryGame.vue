@@ -16,44 +16,80 @@
         </button>
       </div>
       <div v-else>END GAME</div>
-      <button class="mt-6 bg-[#1C2B3A] rounded-md py-2 px-3">Reset</button>
+      <button @click="resetGame" class="mt-6 bg-[#1C2B3A] rounded-md py-2 px-3">
+        Reset
+      </button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-interface StorageItemType {
-  icon: string;
-  value: number;
-}
-interface CardsStorageType {
-  index: number | null;
+interface CardType {
   icon: string;
   show: boolean;
 }
-const storage = ref<StorageItemType[]>([
-  { icon: "ri:apple-fill", value: 0 },
-  { icon: "ri:amazon-fill", value: 0, },
-  { icon: "ri:google-fill", value: 0 },
-  { icon: "ri:android-fill", value: 0 },
-  { icon: "ri:discord-line", value: 0 },
-  { icon: "ri:javascript-fill", value: 0 },
+const storage = ref<string[]>([
+  "ri:apple-fill",
+  "ri:amazon-fill",
+  "ri:google-fill",
+  "ri:android-fill",
+  "ri:discord-line",
+  "ri:javascript-fill",
 ]);
-const cardsStorage = ref<CardsStorageType[]>([]); // za pamcenje kartice
-const pickedCardIndex = ref<number | null>(null); // za uporedjivanje
+const cardsStorage = ref<CardType[]>(
+  Array(12)
+    .fill(null)
+    .map(() => ({ icon: "", show: false }))
+);
+const lastPickedCardIndex = ref<number | null>(null);
 const endGame = ref<boolean>(false);
 const loading = ref<boolean>(false);
 
 const play = (index: number): void => {
-  loading.value = true;
-  while (true) {
-    if (!checkItemsValue()) endGame.value = true;
+  if (!cardsStorage.value[index].show) {
+    loading.value = true;
+
+    if (!lastPickedCardIndex.value) {
+      const randomNumber = Math.floor(Math.random() * 6);
+      cardsStorage.value[index].icon = storage.value[randomNumber];
+      cardsStorage.value[index].show = true;
+      lastPickedCardIndex.value = index;
+      loading.value = false;
+      return;
+    }
 
     const randomNumber = Math.floor(Math.random() * 6);
-    if (storage.value[randomNumber].value == 2) continue;
+    cardsStorage.value[index].icon = storage.value[randomNumber];
+    cardsStorage.value[index].show = true;
+
+    if (
+      cardsStorage.value[index].icon !==
+      cardsStorage.value[lastPickedCardIndex.value].icon
+    ) {
+      setTimeout(() => {
+        cardsStorage.value[index].show = false;
+        if (lastPickedCardIndex.value !== null) {
+          cardsStorage.value[lastPickedCardIndex.value].show = false;
+        }
+        lastPickedCardIndex.value = null;
+        loading.value = false;
+      }, 300);
+    } else {
+      storage.value.splice(index, 1);
+      lastPickedCardIndex.value = null;
+      loading.value = false;
+    }
+    if (!cardsStorage.value.some((card) => !card.show)) {
+      endGame.value = true;
+    }
   }
 };
-const checkItemsValue = (): boolean => {
-  return storage.value.some((item) => item.value < 2);
+
+const resetGame = (): void => {
+  cardsStorage.value = Array(12)
+    .fill(null)
+    .map(() => ({ icon: "", show: false }));
+  lastPickedCardIndex.value = null;
+  loading.value = false;
 };
 </script>
