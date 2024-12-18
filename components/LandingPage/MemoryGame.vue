@@ -7,6 +7,8 @@
           v-for="(card, index) in cards"
           :key="index"
           @click="play(index)"
+          :disabled="loading"
+          :class="loading && 'cursor-wait'"
           class="w-[54px] h-[54px] p-4 border border-lines bg-inherit flex items-center justify-center text-base_true_white text-xs rounded-md"
         >
           <UIcon v-if="card != ''" :name="card" class="w-5 h-5" />
@@ -24,7 +26,7 @@ interface StorageItemType {
   icon: string;
   value: number;
 }
-const storage = computed<StorageItemType[]>(() => [
+const storage = ref<StorageItemType[]>([
   { icon: "ri:apple-fill", value: 0 },
   { icon: "ri:amazon-fill", value: 0 },
   { icon: "ri:google-fill", value: 0 },
@@ -34,16 +36,20 @@ const storage = computed<StorageItemType[]>(() => [
 ]);
 const cards = ref<string[]>(Array(12).fill(""));
 const endGame = ref<boolean>(false);
+const loading = ref<boolean>(false);
 
 const play = (index: number): void => {
+  loading.value = true;
   while (true) {
     if (!checkItemsValue()) endGame.value = true;
 
-    const randomNumber = Math.floor(Math.random() * 6) + 1;
+    const randomNumber = Math.floor(Math.random() * 6);
     if (storage.value[randomNumber].value == 2) continue;
 
-    storage.value[randomNumber].value++;
+    storage.value[randomNumber].value = storage.value[randomNumber].value + 1;
+    console.log(storage.value[randomNumber].value, randomNumber);
     cards.value[index] = storage.value[randomNumber].icon;
+    loading.value = false;
     break;
   }
 };
