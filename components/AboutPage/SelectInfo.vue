@@ -1,9 +1,15 @@
 <template>
-  <div class="flex flex-col gap-1 pb-10 text-base text-base_true_gray">
+  <div
+    class="flex flex-col pb-10 text-base text-base_true_gray"
+    :class="commonStore.isTablet ? 'gap-1' : 'gap-0'"
+  >
     <div v-for="section in infoData.sections" :key="section.id">
       <!-- TITLE -->
       <div
-        class="bg-lines flex items-center gap-3 pl-7 py-2 text-base_true_white"
+        class="flex items-center gap-3 pl-7 py-2 text-base_true_white"
+        :class="
+          commonStore.isTablet ? 'bg-lines' : 'bg-inherit border-b border-lines'
+        "
         @click="
           toggleVisibility({ section: section.id }),
             updateFileModel($event, section.title, 'section')
@@ -25,9 +31,14 @@
       <div class="flex flex-col justify-center">
         <div
           v-if="isOpen.sections[section.id]"
-          v-for="folder in section.folders"
+          v-for="(folder, index) in section.folders"
           :key="folder.title"
           class="flex flex-col justify-center"
+          :class="
+            !commonStore.isTablet &&
+            index == section.folders.length - 1 &&
+            'border-b border-lines'
+          "
           @click="toggleVisibility({ folder: folder.title })"
         >
           <div class="flex items-center pl-7 py-2">
@@ -74,7 +85,10 @@
     </div>
     <!-- CONTACTS -->
     <div
-      class="bg-lines flex items-center gap-3 pl-7 py-2 text-base_true_white"
+      class="flex items-center gap-3 pl-7 py-2 text-base_true_white"
+      :class="
+        commonStore.isTablet ? 'bg-lines' : 'bg-inherit border-b border-lines'
+      "
       @click="toggleVisibility({ section: infoData.contacts.id })"
     >
       <UIcon
@@ -108,13 +122,15 @@
 
 <script setup lang="ts">
 import type { SelectInfoType } from "~/interfaces";
+import { useCommonStore } from "~/store/commonStore";
 
 defineProps<{ infoData: SelectInfoType }>();
-
 const emit = defineEmits<{
   (event: "onSelectFile", file: string): void;
   (event: "onSelectSection", section: string): void;
 }>();
+
+const commonStore = useCommonStore();
 
 const isOpen = reactive({
   sections: {

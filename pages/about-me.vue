@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-portfolio-primary-50 pb-10">
+  <div v-if="commonStore.isTablet" class="bg-portfolio-primary-50 pb-10">
     <div class="py-5 px-7 text-sm">_about-me</div>
     <SelectInfo
       :info-data="selectInfoData"
@@ -30,12 +30,28 @@
       </div>
     </div>
   </div>
+
+  <!-- DESKTOP VERSION -->
+  <div v-else class="flex bg-portfolio-primary-50 h-[84vh]">
+    <div class="border-r border-lines w-2/12 h-full">
+      <SelectInfo
+        :info-data="selectInfoData"
+        @on-select-file="selectedTitles.file = $event"
+        @on-select-section="selectedTitles.section = $event"
+      />
+    </div>
+    <div class="w-5/12 border-r border-lines h-full">Jedan deo</div>
+    <div class="w-5/12 h-full">drugi deo</div>
+  </div>
 </template>
 
 <script setup lang="ts">
 import SelectInfo from "~/components/AboutPage/SelectInfo.vue";
 import CodeSnippet from "~/components/AboutPage/CodeSnippet.vue";
 import { filesData, selectInfoData, useAxiosExample } from "~/data";
+import { useCommonStore } from "~/store/commonStore";
+
+const commonStore = useCommonStore();
 
 const selectedTitles = reactive({
   file: "bio",
