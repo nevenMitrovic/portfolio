@@ -43,7 +43,7 @@
     <div
       class="w-5/12 border-r border-lines h-full overflow-y-auto text-base text-base_true_gray"
     >
-      <div class="h-10 border-b border-lines">
+      <div class="h-[41px] border-b border-lines">
         <div
           v-if="selectedTitles.section"
           class="flex justify-between items-center px-6 border-r border-lines h-full w-1/3"
@@ -57,10 +57,10 @@
           </button>
         </div>
       </div>
-      <div class="px-10">
+      <div class="px-10 py-5">
         <p
           v-if="selectedTitles.file"
-          class="flex flex-col pt-4 text-base text-base_true_gray"
+          class="flex flex-col text-base text-base_true_gray"
         >
           <span class="inline-block pb-2">/**</span>
           <span class="inline-block pb-4">{{ selectedTitles.file }}</span>

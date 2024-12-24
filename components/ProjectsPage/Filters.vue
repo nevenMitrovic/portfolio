@@ -2,7 +2,10 @@
   <div class="flex flex-col gap-1 pb-10 text-base text-base_true_gray">
     <div>
       <div
-        class="bg-lines flex items-center gap-3 pl-7 py-2 text-base_true_white"
+        class="flex items-center gap-3 pl-7 py-2 text-base_true_white"
+        :class="
+          commonStore.isTablet ? 'bg-lines' : 'bg-inherit border-b border-lines'
+        "
         @click="toggleVisibility()"
       >
         <UIcon
@@ -28,7 +31,7 @@
       </div>
     </div>
   </div>
-  <div>
+  <div v-if="commonStore.isTablet">
     <div class="px-7 pb-4">
       // projects
       <span class="text-base_true_gray">/ {{ getSelectedFilterTitle() }}</span>
@@ -38,9 +41,12 @@
 
 <script setup lang="ts">
 import CheckBox from "../Common/CheckBox.vue";
+import { useCommonStore } from "~/store/commonStore";
 import { filterData } from "~/data";
 
 const emit = defineEmits(["updateFilter"]);
+
+const commonStore = useCommonStore();
 
 const isOpen = ref(false);
 const selectedFilters = reactive({
