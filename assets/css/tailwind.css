@@ -37,6 +37,28 @@
   font-style: normal;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #011627;
+  border-left: solid 1px #1e2d3d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 pre {
   @apply !whitespace-pre-wrap !break-words !overflow-hidden !text-left;
 }

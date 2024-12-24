@@ -45,10 +45,16 @@
           </ClientOnly>
         </div>
       </div>
-      <div v-if="showDetails" class="flex text-base_true_gray text-sm pt-4">
+      <div
+        v-if="showDetails"
+        class="relative flex text-base_true_gray text-sm pt-4"
+      >
         <p>{{ snippetData.details }}</p>
-        <button class="flex items-start" @click="closeDetails">
-          <UIcon name="ri:close-fill" class="w-5 h-5 text-base_true_gray" />
+        <button
+          class="absolute flex items-start right-0 top-0"
+          @click="closeDetails"
+        >
+          <UIcon name="ri:close-fill" class="w-4 h-4 text-base_true_gray" />
         </button>
       </div>
     </div>
