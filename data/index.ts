@@ -162,7 +162,7 @@ export const projectCardsData: ProjectCardType[] = [
       { id: "vue", color: "vue_green", icon: "ri:vuejs-line" },
     ],
     img: "./whobrings.png",
-    description: "Fullstack application for creating and managing event lists.",
+    description: "Fullstack application for creating and managing events.",
     link: "https://github.com/nevenMitrovic/whobrings",
   },
   {
@@ -172,7 +172,7 @@ export const projectCardsData: ProjectCardType[] = [
       { id: "react", color: "react_blue", icon: "ri:reactjs-line" },
     ],
     img: "./employee.png",
-    description: "Full-stack application for manage employee data.",
+    description: "Fullstack application for manage employee data.",
     link: "https://github.com/nevenMitrovic/employees-app",
   },
   {
@@ -187,6 +187,6 @@ export const projectCardsData: ProjectCardType[] = [
     tags: [{ id: "nuxt", color: "vue_green", icon: "ri:vuejs-line" }],
     img: "./portfolio.png",
     description: "My official website to showcase my skills and contact me.",
-    link: "/",
+    link: "https://github.com/nevenMitrovic/portfolio",
   },
 ];

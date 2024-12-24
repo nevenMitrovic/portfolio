@@ -31,7 +31,7 @@
       </div>
     </div>
   </div>
-  <div v-if="commonStore.isTablet">
+  <div :class="!commonStore.isTablet && 'hidden'">
     <div class="px-7 pb-4">
       // projects
       <span class="text-base_true_gray">/ {{ getSelectedFilterTitle() }}</span>

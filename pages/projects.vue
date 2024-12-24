@@ -3,7 +3,6 @@
     <div class="py-5 px-7 text-sm">_projects</div>
     <Filters @update-filter="selectedFilters = $event" />
     <div>
-      <!-- PROJECTS -->
       <div class="flex flex-col gap-5 px-7">
         <div v-for="(card, index) in filteredProjects()" :key="card.id">
           <ProjectCard :props="card" :index="index + 1" />
@@ -11,13 +10,41 @@
       </div>
     </div>
   </div>
+
+  <!-- DESKTOP VERSION -->
   <div v-else class="flex bg-portfolio-primary-50 h-[84vh]">
     <div class="border-r border-lines w-2/12 h-full overflow-y-auto">
       <Filters @update-filter="selectedFilters = $event" />
     </div>
     <div class="w-full h-full overflow-y-auto text-base text-base_true_gray">
-      <div class="h-[41px] border-b border-lines"></div>
-      <div class="px-10 py-5">projekti</div>
+      <div class="h-[41px] border-b border-lines">
+        <div
+          class="flex justify-between items-center px-6 border-r border-lines h-full w-1/6"
+        >
+          <div class="max-w-xs overflow-hidden text-ellipsis whitespace-nowrap">
+            {{ getFiltersNames() }}
+          </div>
+          <button
+            @click="removeSelectedFilters"
+            class="flex items-center justify-center"
+          >
+            <UIcon name="ri:close-fill" class="w-4 h-4 text-base_true_gray" />
+          </button>
+        </div>
+      </div>
+      <div class="px-10 py-5">
+        <div
+          class="grid gap-5 justify-center items-start lg:grid-cols-2 xl:grid-cols-3"
+        >
+          <div
+            v-for="(card, index) in filteredProjects()"
+            :key="card.id"
+            class="flex items-center justify-center"
+          >
+            <ProjectCard :props="card" :index="index + 1" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -43,5 +70,19 @@ const filteredProjects = (): ProjectCardType[] => {
     project.tags.some((tag) => selectedFilters.value.includes(tag.id))
   );
   return filteredProjects;
+};
+const getFiltersNames = () => {
+  if (selectedFilters.value.length === 0) {
+    return "all";
+  } else {
+    if (selectedFilters.value.length == Object.keys(selectedFilters).length) {
+      return "all";
+    } else {
+      return selectedFilters.value.join("; ");
+    }
+  }
+};
+const removeSelectedFilters = (): void => {
+  selectedFilters.value = [];
 };
 </script>

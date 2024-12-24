@@ -8,6 +8,7 @@
     </div>
     <div
       class="relative flex flex-col justify-center bg-portfolio-primary-100 border border-lines rounded-xl overflow-hidden"
+      :class="commonStore.isTablet ? 'max-w-[291px] max-h-[328px]' : 'max-w-[370px] max-h-[370px]'"
     >
       <div
         class="flex items-center justify-center gap-1 absolute top-3 right-3"
@@ -21,7 +22,12 @@
         </div>
       </div>
       <div class="border-b border-lines">
-        <NuxtImg :src="props.img" :alt="props.id" />
+        <NuxtImg
+          :src="props.img"
+          width="500px"
+          height="300px"
+          :alt="props.id"
+        />
       </div>
       <div class="px-8 py-6 text-base_true_gray">
         {{ props.description }}
@@ -42,9 +48,12 @@
 </template>
 
 <script setup lang="ts">
+import { useCommonStore } from "~/store/commonStore";
 import type { ProjectCardType } from "~/interfaces";
 
 defineProps<{ props: ProjectCardType; index: number }>();
+
+const commonStore = useCommonStore();
 
 const colorVariants = {
   node_green: "bg-node_green",
