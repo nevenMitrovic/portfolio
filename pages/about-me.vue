@@ -62,9 +62,9 @@
           v-if="selectedTitles.file"
           class="flex flex-col pt-4 text-base text-base_true_gray"
         >
-        <span class="inline-block pb-2">/**</span>
-        <p class="pb-4">{{ selectedTitles.file }}</p>
-          {{ getFileText() }}
+          <span class="inline-block pb-2">/**</span>
+          <span class="inline-block pb-4">{{ selectedTitles.file }}</span>
+          <span>{{ getFileText() }}</span>
           <span class="inline-block pt-2">*/</span>
         </p>
         <p v-else class="pt-4 text-base text-base_true_gray">
