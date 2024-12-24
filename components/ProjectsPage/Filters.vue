@@ -79,4 +79,16 @@ const getSelectedFilterTitle = () => {
     }
   }
 };
+const resetFilters = (): void => {
+  for (const key in selectedFilters) {
+    if (Object.prototype.hasOwnProperty.call(selectedFilters, key)) {
+      selectedFilters[key as keyof typeof selectedFilters] = false;
+    }
+  }
+  emit("updateFilter", []);
+};
+
+defineExpose({
+  resetFilters,
+});
 </script>

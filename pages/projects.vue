@@ -14,7 +14,7 @@
   <!-- DESKTOP VERSION -->
   <div v-else class="flex bg-portfolio-primary-50 h-[84vh]">
     <div class="border-r border-lines w-2/12 h-full overflow-y-auto">
-      <Filters @update-filter="selectedFilters = $event" />
+      <Filters @update-filter="selectedFilters = $event" ref="filtersRef" />
     </div>
     <div class="w-full h-full overflow-y-auto text-base text-base_true_gray">
       <div class="h-[41px] border-b border-lines">
@@ -60,6 +60,7 @@ const commonStore = useCommonStore();
 
 const selectedFilters = ref<string[]>([]);
 const projects = ref(projectCardsData);
+const filtersRef = ref<InstanceType<typeof Filters> | null>(null);
 
 const filteredProjects = (): ProjectCardType[] => {
   if (!selectedFilters.value.length) {
@@ -84,5 +85,6 @@ const getFiltersNames = () => {
 };
 const removeSelectedFilters = (): void => {
   selectedFilters.value = [];
+  filtersRef.value?.resetFilters();
 };
 </script>
