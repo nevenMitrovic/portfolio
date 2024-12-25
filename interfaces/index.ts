@@ -1,3 +1,5 @@
+import type { MonthIndex, Year } from "~/types";
+
 export interface NavigationLinkType {
   title: string;
   path: string;
@@ -53,7 +55,7 @@ export interface FileDataType {
 export interface CodeSnippetType {
   code: string;
   details: string;
-  time: string;
+  time: { month: MonthIndex, year: Year };
 }
 
 export interface FilterDataType {

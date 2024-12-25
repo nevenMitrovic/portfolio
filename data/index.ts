@@ -141,9 +141,11 @@ export const useAxiosExample: CodeSnippetType = {
   )
   return axiosInstance;
 }`,
-  details:
-    "This is a code snippet from my project named Who Brings, created 7 months ago. It includes a custom composable called useAxios.",
-  time: "5 months ago",
+  details: `This is a code snippet from my project named Who Brings, created ${agoCalculator(
+    5,
+    2024
+  )}. It includes a custom composable called useAxios.`,
+  time: { month: 5, year: 2024 },
 };
 
 export const filterData: FilterDataType[] = [
@@ -219,5 +221,5 @@ declare const form: {
 };`,
   details:
     "This code snippet demonstrates how to send a form using TypeScript.",
-  time: "2 months ago",
+  time: { month: 12, year: 2024 },
 };

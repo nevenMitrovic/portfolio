@@ -16,7 +16,9 @@
           <p class="text-portfolio-secondary-purple text-sm font-bold">
             @nevenmitrovic
           </p>
-          <p class="text-base_true_gray text-xs">{{ snippetData.time }}</p>
+          <p class="text-base_true_gray text-xs">
+            {{ agoCalculator(snippetData.time.month, snippetData.time.year) }}
+          </p>
         </div>
       </div>
       <div class="flex items-center justify-center">
