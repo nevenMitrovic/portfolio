@@ -2,7 +2,7 @@
   <form
     v-if="status === ''"
     @submit.prevent="sendEmail"
-    class="flex flex-col gap-4 px-7"
+    class="flex flex-col gap-4 px-7 md:px-0"
   >
     <Input :id="'name'" :name="'name'" v-model="name" :label="'_name'" />
     <Input :id="'email'" :name="'email'" v-model="email" :label="'_email'" />
@@ -74,10 +74,11 @@ const message = ref<string>("");
 const status = ref<string>("");
 const loading = ref<boolean>(false);
 
-const resetForm = (): void => {
+const resetForm = (parent: boolean = false): void => {
   name.value = "";
   email.value = "";
   message.value = "";
+  if (parent) status.value = "";
 };
 const sendEmail = async () => {
   if (loading.value) return;
@@ -109,4 +110,8 @@ const sendEmail = async () => {
     console.log(status.value);
   }
 };
+
+defineExpose({
+  resetForm,
+});
 </script>
