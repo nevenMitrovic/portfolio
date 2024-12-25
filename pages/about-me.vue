@@ -73,7 +73,7 @@
       </div>
     </div>
     <div class="w-5/12 h-full overflow-y-auto">
-      <div class="h-10 border-b border-lines"></div>
+      <div class="h-[41px] border-b border-lines"></div>
       <div class="px-10 py-5">
         <h2 class="text-lg text-base_true_gray pb-10">
           // Code snippet showcase:
