@@ -190,3 +190,34 @@ export const projectCardsData: ProjectCardType[] = [
     link: "https://github.com/nevenMitrovic/portfolio",
   },
 ];
+
+export const formExample: CodeSnippetType = {
+  code: `const button = document.querySelector<HTMLButtonElement>('#sendBtn');
+
+if (button) {
+  const message = {
+    name: "Neven Mitrovic",
+    email: "nevenmitrovic4@gmail.com",
+    message: "Hey! Just checked your website and it looks awesome! Thanks!",
+    date: "Thu 21 Apr"
+  };
+
+  button.addEventListener('click', () => {
+    form.send(message);
+  });
+} else {
+  console.error('Button with id #sendBtn not found.');
+}
+
+declare const form: {
+  send: (message: {
+    name: string;
+    email: string;
+    message: string;
+    date: string;
+  }) => void;
+};`,
+  details:
+    "This code snippet demonstrates how to send a form using TypeScript.",
+  time: "2 months ago",
+};

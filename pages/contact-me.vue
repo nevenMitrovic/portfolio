@@ -28,7 +28,9 @@
     </div>
     <div class="w-5/12 h-full overflow-y-auto">
       <div class="h-[41px] border-b border-lines"></div>
-      <div class="px-10 py-5">Neki kod</div>
+      <div class="px-10 py-5">
+        <CodeSnippet :snippet-data="formExample" />
+      </div>
     </div>
   </div>
 </template>
@@ -36,6 +38,8 @@
 <script setup lang="ts">
 import FindMe from "~/components/ContactPage/FindMe.vue";
 import Form from "~/components/ContactPage/Form.vue";
+import CodeSnippet from "~/components/AboutPage/CodeSnippet.vue";
+import { formExample } from "~/data";
 import { useCommonStore } from "~/store/commonStore";
 
 const commonStore = useCommonStore();
