@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-primary-light pt-24 px-7 md:pt-[10%] md:pl-[22%] flex md:flex-row flex-col"
+    class="bg-primary-light pt-24 px-7 md:py-[10%] md:pl-[22%] flex md:flex-row md:items-center flex-col"
   >
     <div class="flex flex-col md:w-fit">
       <div class="text-base md:text-lg mb-20">
