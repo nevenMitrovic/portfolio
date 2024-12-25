@@ -23,7 +23,7 @@
       </div>
     </div>
     <div
-      v-if="!commonStore.isMobile || !commonStore.isTablet"
+      v-if="!commonStore.isTablet"
       class="flex items-center justify-center w-1/2"
     >
       <MemoryGame />
