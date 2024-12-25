@@ -60,9 +60,12 @@ const lastPickedCardIndex = ref<number | null>(null);
 const endGame = ref<boolean>(false);
 const startGame = ref<boolean>(true);
 const loading = ref<boolean>(false);
+const unlock = ref<boolean>(false);
 const time = ref<string>("00:00");
+const intervalId = ref<NodeJS.Timeout | null>(null);
 
 const play = (index: number): void => {
+  if (!unlock.value) return;
   if (!cardsStorage.value[index].show) {
     loading.value = true;
 
@@ -110,6 +113,7 @@ const play = (index: number): void => {
     if (!cardsStorage.value.some((card) => !card.show)) {
       setTimeout(() => {
         endGame.value = true;
+        unlock.value = false;
       }, 300);
     }
 
@@ -117,6 +121,10 @@ const play = (index: number): void => {
   }
 };
 const restartGame = (): void => {
+  if (intervalId.value) {
+    clearInterval(intervalId.value);
+    intervalId.value = null;
+  }
   cardsStorage.value = Array(12)
     .fill(null)
     .map(() => ({ icon: "", show: false }));
@@ -124,14 +132,22 @@ const restartGame = (): void => {
   startGame.value = true;
   endGame.value = true;
   loading.value = false;
+  unlock.value = false;
 };
 const timer = (): void => {
   if (startGame.value) {
     startGame.value = false;
     endGame.value = false;
+    unlock.value = true;
+
+    if (intervalId.value) {
+      clearInterval(intervalId.value);
+      intervalId.value = null;
+    }
+
     let sec: number | string = 0;
     let min: number | string = 0;
-    const counter = setInterval(() => {
+    intervalId.value = setInterval(() => {
       if (typeof sec === "string") sec = parseInt(sec) + 1;
       if (typeof sec === "number") {
         if (sec > 59) {
@@ -139,20 +155,19 @@ const timer = (): void => {
           if (typeof min === "string") min = parseInt(min) + 1;
           if (typeof min === "number")
             min = min < 10 ? "0" + min : min.toString();
-          if (typeof sec === "number")
-            sec = sec < 10 ? "0" + sec : sec.toString();
         }
-        if (typeof sec === "number")
-          sec = sec < 10 ? "0" + sec : sec.toString();
-        if (typeof min === "number")
-          min = min < 10 ? "0" + min : min.toString();
+        sec = sec < 10 ? "0" + sec : sec.toString();
       }
+      if (typeof min === "number") min = min < 10 ? "0" + min : min.toString();
+
       time.value = `${min}:${sec}`;
+
       if (endGame.value) {
         sec = 0;
         min = 0;
         startGame.value = true;
-        clearInterval(counter);
+        clearInterval(intervalId.value!);
+        intervalId.value = null;
         restartGame();
         return;
       }
