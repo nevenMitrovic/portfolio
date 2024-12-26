@@ -82,7 +82,7 @@ export const filesData: FileDataType[] = [
   },
   {
     id: "sport",
-    data: "I have been involved in sports since the age of six. Over the years, I trained and played football for FK Jedinstvo Ub, Radnički Obrenovac, Bask Beograd and Radnik Ub. In addition to football, I also trained in kickboxing, competing for Soko Ub. I hold the title of Junior Vice-Champion of Serbia in the under-75kg category. I love all sports, but apart from football, I particularly enjoy following basketball and handball.",
+    data: "I have been involved in sports since the age of six. Over the years, I trained and played football for FK Jedinstvo Ub, Radnički Obrenovac and Radnik Ub. In addition to football, I also trained in kickboxing, competing for Soko Ub. I hold the title of Junior Vice-Champion of Serbia in the under-75kg category. I love all sports, but apart from football, I particularly enjoy following basketball and handball.",
   },
   {
     id: "hiking",
@@ -106,7 +106,7 @@ export const filesData: FileDataType[] = [
   },
   {
     id: "high-school",
-    data: "I completed my high school education at Gymnasium Branislav Petronijević in Ub, with an average grade of 4.00.",
+    data: "I completed my high school education at Gymnasium Branislav Petronijević in Ub.",
   },
   {
     id: "university",
@@ -114,7 +114,7 @@ export const filesData: FileDataType[] = [
   },
   {
     id: "resume",
-    data: "From June 2021 to July 2023, I worked as a live betting operator at Exefeed Doo. My responsibilities included monitoring betting markets from the source, comparing them with other bookmakers, and addressing any discrepancies in the markets. Since February 2024, I have been involved in developing the Osiguraj Lako web application for online insurance services as a Frontend Developer.",
+    data: "From June 2021 to July 2023, I worked as a live betting operator at Exefeed Doo. My responsibilities included monitoring betting markets from the source, comparing them with other bookmakers, and addressing any discrepancies in the markets. Since February 2024, I have been involved in developing the Osiguraj Lako web application for online insurance services as a Frontend Developer. My responsibilities included designing and developing user interfaces, creating components to add new features, collaborating with design and backend teams to deliver seamless user experiences, developing responsive designs to ensure optimal performance across various devices and screen sizes, and integrating and interacting with external APIs within the frontend codebase of web applications.",
   },
 ];
 
