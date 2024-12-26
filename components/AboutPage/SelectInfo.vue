@@ -1,12 +1,12 @@
 <template>
   <div
-    class="flex flex-col pb-10 text-base text-base_true_gray"
+    class="flex flex-col pb-10 text-base md:text-sm xl:text-base text-base_true_gray"
     :class="commonStore.isTablet ? 'gap-1' : 'gap-0'"
   >
     <div v-for="section in infoData.sections" :key="section.id">
       <!-- TITLE -->
       <div
-        class="flex items-center gap-3 pl-7 py-2 text-base_true_white"
+        class="flex items-center gap-3 pl-7 md:pl-2 xl:pl-7 py-2 text-base_true_white"
         :class="
           commonStore.isTablet ? 'bg-lines' : 'bg-inherit border-b border-lines'
         "
@@ -41,7 +41,7 @@
           "
           @click="toggleVisibility({ folder: folder.title })"
         >
-          <div class="flex items-center pl-7 py-2">
+          <div class="flex items-center pl-7 md:pl-2 xl:pl-7 py-2">
             <UIcon
               v-if="!isOpen.folders[folder.title]"
               name="ri:arrow-right-s-line"
@@ -70,7 +70,7 @@
               <div
                 v-for="file in folder.files"
                 :key="file"
-                class="flex items-center pl-[60px] py-2"
+                class="flex items-center pl-[60px] md:pl-[40px] xl:pl-[60px] py-2"
                 @click="updateFileModel($event, file, 'file')"
               >
                 <UIcon name="ri:markdown-fill" class="w-4 h-4 mr-2" />
@@ -85,7 +85,7 @@
     </div>
     <!-- CONTACTS -->
     <div
-      class="flex items-center gap-3 pl-7 py-2 text-base_true_white"
+      class="flex md:hidden xl:flex items-center gap-3 pl-7 py-2 text-base_true_white"
       :class="
         commonStore.isTablet ? 'bg-lines' : 'bg-inherit border-b border-lines'
       "

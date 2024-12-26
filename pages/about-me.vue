@@ -33,7 +33,7 @@
 
   <!-- DESKTOP VERSION -->
   <div v-else class="flex bg-portfolio-primary-50 h-[84vh]">
-    <div class="border-r border-lines w-2/12 h-full overflow-y-auto">
+    <div class="border-r border-lines w-2/12 md:w-[230px] xl:w-2/12 h-full overflow-y-auto">
       <SelectInfo
         :info-data="selectInfoData"
         @on-select-file="selectedTitles.file = $event"
