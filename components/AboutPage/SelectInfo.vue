@@ -6,7 +6,7 @@
     <div v-for="section in infoData.sections" :key="section.id">
       <!-- TITLE -->
       <div
-        class="flex items-center gap-3 pl-7 md:pl-2 xl:pl-7 py-2 text-base_true_white"
+        class="flex items-center gap-3 pl-7 md:pl-2 xl:pl-7 py-2 text-base_true_white cursor-pointer"
         :class="
           commonStore.isTablet ? 'bg-lines' : 'bg-inherit border-b border-lines'
         "
@@ -33,7 +33,7 @@
           v-if="isOpen.sections[section.id]"
           v-for="(folder, index) in section.folders"
           :key="folder.title"
-          class="flex flex-col justify-center"
+          class="flex flex-col justify-center cursor-pointer"
           :class="
             !commonStore.isTablet &&
             index == section.folders.length - 1 &&
@@ -70,7 +70,7 @@
               <div
                 v-for="file in folder.files"
                 :key="file"
-                class="flex items-center pl-[60px] md:pl-[40px] xl:pl-[60px] py-2"
+                class="flex items-center pl-[60px] md:pl-[40px] xl:pl-[60px] py-2 cursor-pointer"
                 @click="updateFileModel($event, file, 'file')"
               >
                 <UIcon name="ri:markdown-fill" class="w-4 h-4 mr-2" />
@@ -85,7 +85,7 @@
     </div>
     <!-- CONTACTS -->
     <div
-      class="flex md:hidden xl:flex items-center gap-3 pl-7 py-2 text-base_true_white"
+      class="flex md:hidden xl:flex items-center gap-3 pl-7 py-2 text-base_true_white cursor-pointer"
       :class="
         commonStore.isTablet ? 'bg-lines' : 'bg-inherit border-b border-lines'
       "
@@ -107,7 +107,7 @@
       v-if="isOpen.sections.contacts"
       v-for="contact in infoData.contacts.contacts"
       :key="contact"
-      class="flex items-center gap-3 pl-7 py-2 text-base_true_gray"
+      class="flex items-center gap-3 pl-7 py-2 text-base_true_gray cursor-pointer"
     >
       <UIcon
         v-if="contact.charAt(0) == '+'"

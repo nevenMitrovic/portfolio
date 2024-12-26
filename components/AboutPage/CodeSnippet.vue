@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- HEADER -->
-    <div class="flex justify-between mb-3">
+    <div class="flex md:flex-col lg:flex-row justify-between mb-3">
       <div class="flex">
         <div class="mr-2">
           <NuxtImg
@@ -21,7 +21,9 @@
           </p>
         </div>
       </div>
-      <div class="flex items-center justify-center">
+      <div
+        class="flex items-center md:justify-start lg:justify-center md:pt-2 lg:pt-0 justify-center"
+      >
         <button
           class="flex items-center justify-center gap-1"
           @click="openDetails"
