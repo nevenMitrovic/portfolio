@@ -4,12 +4,10 @@
     <div class="flex md:flex-col lg:flex-row justify-between mb-3">
       <div class="flex">
         <div class="mr-2">
-          <NuxtImg
+          <img
             src="./slikaCV.jpg"
             alt="User avatar"
-            width="36px"
-            height="36px"
-            class="rounded-full"
+            class="w-[36px] h-[36px] rounded-full"
           />
         </div>
         <div class="flex flex-col">

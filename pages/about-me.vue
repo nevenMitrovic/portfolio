@@ -20,8 +20,8 @@
             v-if="selectedTitles.file == 'code-by-comtrade'"
             class="w-full flex justify-start items-center mt-4 pt-4"
           >
-            <NuxtImg
-              src="./Neven-Mitrovic-Certificate.png"
+            <img
+              src="/img/Neven-Mitrovic-Certificate.png"
               alt="Certificate"
               class="w-full h-full rounded-md"
             />
@@ -82,8 +82,8 @@
             v-if="selectedTitles.file == 'code-by-comtrade'"
             class="w-full flex justify-start items-center mt-4 pt-4"
           >
-            <NuxtImg
-              src="./Neven-Mitrovic-Certificate.png"
+            <img
+              src="/img/Neven-Mitrovic-Certificate.png"
               alt="Certificate"
               class="w-full h-full rounded-md"
             />

@@ -19,9 +19,6 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
   css: ["~/assets/css/tailwind.css"],
-  image: {
-    dir: "public/img",
-  },
   ui: {
     safelistColors: [
       "portfolio-primary",

@@ -22,11 +22,10 @@
         </div>
       </div>
       <div class="border-b border-lines">
-        <NuxtImg
+        <img
           :src="props.img"
-          width="500px"
-          height="300px"
           :alt="props.id"
+          class="w-[500px] h-[300px]"
         />
       </div>
       <div class="px-8 py-6 text-base_true_gray">
