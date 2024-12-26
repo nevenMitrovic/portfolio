@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/css/tailwind.css"],
   image: {
-    dir: "static/img",
+    dir: "public/img",
     provider: "netlify",
     domains: ["nevenmitrovic.netlify.app"],
   },
