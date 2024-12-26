@@ -20,8 +20,7 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/css/tailwind.css"],
   image: {
-    dir: "assets/img",
-    provider: "netlifyImageCdn",
+    dir: "public/img",
   },
   ui: {
     safelistColors: [
