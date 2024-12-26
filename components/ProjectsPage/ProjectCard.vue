@@ -25,7 +25,7 @@
         <img
           :src="props.img"
           :alt="props.id"
-          class="w-[500px] h-[300px]"
+          class="w-full h-full"
         />
       </div>
       <div class="px-8 py-6 text-base_true_gray">

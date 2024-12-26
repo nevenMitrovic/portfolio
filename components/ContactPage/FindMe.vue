@@ -25,7 +25,7 @@
     </div>
     <div v-if="isOpen" class="flex flex-col pt-3">
       <NuxtLink
-        to="https://www.instagram.com/neven_mitrovic/"
+        to="https://www.instagram.com/neven_mitrovic_/"
         target="_blank"
         class="flex items-center gap-2 pl-7 md:pl-2 xl:pl-7 text-base md:text-sm xl:text-base"
       >
