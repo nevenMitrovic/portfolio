@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-primary-light pt-24 px-7 md:py-[10%] md:pl-[22%] flex md:flex-row md:items-center flex-col"
+    class="bg-primary-light pt-24 px-7 md:py-[10%] md:pl-[22%] flex lg:flex-row md:items-center xxl:justify-between flex-col"
   >
     <div class="flex flex-col md:w-fit">
       <div class="text-base md:text-lg mb-20">
@@ -24,7 +24,7 @@
     </div>
     <div
       v-if="!commonStore.isTablet"
-      class="flex items-center justify-center w-1/2"
+      class="flex items-center justify-center w-1/2 md:pt-10 lg:pt-0"
     >
       <MemoryGame />
     </div>
