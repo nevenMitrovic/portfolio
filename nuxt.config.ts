@@ -22,7 +22,6 @@ export default defineNuxtConfig({
   image: {
     dir: "public/img",
     provider: "netlify",
-    domains: ["nevenmitrovic.netlify.app"],
   },
   ui: {
     safelistColors: [
