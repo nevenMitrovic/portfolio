@@ -5,7 +5,7 @@
       <div class="flex">
         <div class="mr-2">
           <img
-            src="./slikaCV.jpg"
+            src="/img/slikaCV.jpg"
             alt="User avatar"
             class="w-[36px] h-[36px] rounded-full"
           />
