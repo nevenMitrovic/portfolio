@@ -12,14 +12,16 @@
   </div>
 
   <!-- DESKTOP VERSION -->
-  <div v-else class="flex bg-portfolio-primary-50 h-[84vh]">
-    <div class="border-r border-lines w-2/12 h-full overflow-y-auto">
+  <div v-else class="flex bg-portfolio-primary-50 h-screen">
+    <div
+      class="border-r border-lines w-2/12 md:w-[230px] xl:w-2/12 h-full overflow-y-auto"
+    >
       <Filters @update-filter="selectedFilters = $event" ref="filtersRef" />
     </div>
-    <div class="w-full h-full overflow-y-auto text-base text-base_true_gray">
-      <div class="h-[41px] border-b border-lines">
+    <div class="w-full h-full overflow-y-auto text-base md:text-sm xl:text-base text-base_true_gray">
+      <div class="h-[41px] md:h-[37px] xl:h-[41px] border-b border-lines">
         <div
-          class="flex justify-between items-center px-6 border-r border-lines h-full w-1/6"
+          class="flex justify-between items-center px-6 border-r border-lines h-full w-1/6 md:w-[200px] xl:w-1/6"
         >
           <div class="max-w-xs overflow-hidden text-ellipsis whitespace-nowrap">
             {{ getFiltersNames() }}

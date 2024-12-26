@@ -9,7 +9,7 @@
     />
     <label
       :for="id"
-      class="flex items-center gap-2 text-base_true_gray text-base"
+      class="flex items-center gap-2 text-base_true_gray text-base md:text-sm xl:text-base"
     >
       <UIcon :name="icon" class="w-5 h-5" />
       <div class="text-base_true_white">{{ id }}</div>

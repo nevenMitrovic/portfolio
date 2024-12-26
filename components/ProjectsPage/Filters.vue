@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-1 pb-10 text-base text-base_true_gray">
+  <div class="flex flex-col gap-1 pb-10 text-base md:text-sm xl:text-base text-base_true_gray">
     <div>
       <div
         class="flex items-center gap-3 pl-7 py-2 text-base_true_white"
