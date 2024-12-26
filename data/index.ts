@@ -53,7 +53,7 @@ export const selectInfoData: SelectInfoType = {
         {
           color: "portfolio-secondary-purple",
           title: "education",
-          files: ["high-school", "university"],
+          files: ["high-school", "university", "code-by-comtrade"],
         },
       ],
     },
@@ -111,6 +111,10 @@ export const filesData: FileDataType[] = [
   {
     id: "university",
     data: "As someone who has been involved in sports from an early age, it was only natural for me to continue my education in that direction. :) In 2015, I started my studies at the University of Sport and Physical Education in Belgrade.",
+  },
+  {
+    id: "code-by-comtrade",
+    data: "At the beginning of 2024, I completed a specialized Frontend Development course at Comtrade with a grade of 10 (excellent)."
   },
   {
     id: "resume",

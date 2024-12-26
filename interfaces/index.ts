@@ -48,7 +48,8 @@ export interface FileDataType {
     | "university"
     | "resume"
     | "books"
-    | "movies";
+    | "movies"
+    | "code-by-comtrade";
   data: string;
 }
 

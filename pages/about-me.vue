@@ -11,12 +11,22 @@
       <div class="px-7 mb-10">
         // {{ selectedTitles.section }}
         <span class="text-base_true_gray">/ {{ selectedTitles.file }}</span>
-        <p
+        <div
           v-if="selectedTitles.file"
           class="pt-4 text-base text-base_true_gray"
         >
           {{ getFileText() }}
-        </p>
+          <p
+            v-if="selectedTitles.file == 'code-by-comtrade'"
+            class="w-full flex justify-start items-center mt-4 pt-4"
+          >
+            <NuxtImg
+              src="./Neven-Mitrovic-Certificate.png"
+              alt="Certificate"
+              class="w-full h-full rounded-md"
+            />
+          </p>
+        </div>
         <p v-else class="pt-4 text-base text-base_true_gray">
           Select specific information about me!
         </p>
@@ -60,7 +70,7 @@
         </div>
       </div>
       <div class="px-10 md:px-5 lg:px-7 xl:px-10 py-5">
-        <p
+        <div
           v-if="selectedTitles.file"
           class="flex flex-col text-base md:text-sm xl:text-base text-base_true_gray"
         >
@@ -68,7 +78,17 @@
           <span class="inline-block pb-4">{{ selectedTitles.file }}</span>
           <span>{{ getFileText() }}</span>
           <span class="inline-block pt-2">*/</span>
-        </p>
+          <p
+            v-if="selectedTitles.file == 'code-by-comtrade'"
+            class="w-full flex justify-start items-center mt-4 pt-4"
+          >
+            <NuxtImg
+              src="./Neven-Mitrovic-Certificate.png"
+              alt="Certificate"
+              class="w-full h-full rounded-md"
+            />
+          </p>
+        </div>
         <p v-else class="pt-4 text-base text-base_true_gray">
           Select specific information about me!
         </p>
