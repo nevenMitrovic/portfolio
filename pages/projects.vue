@@ -21,7 +21,7 @@
     <div class="w-full h-full overflow-y-auto text-base md:text-sm xl:text-base text-base_true_gray">
       <div class="h-[41px] md:h-[37px] xl:h-[41px] border-b border-lines">
         <div
-          class="flex justify-between items-center px-6 border-r border-lines h-full w-1/6 md:w-[200px] xl:w-1/6"
+          class="flex justify-between items-center px-6 md:px-3 xl:px-6 border-r border-lines h-full w-1/6 md:w-[200px] xl:w-1/6"
         >
           <div class="max-w-xs overflow-hidden text-ellipsis whitespace-nowrap">
             {{ getFiltersNames() }}

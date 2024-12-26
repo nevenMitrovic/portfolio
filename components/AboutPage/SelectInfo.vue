@@ -107,7 +107,7 @@
       v-if="isOpen.sections.contacts"
       v-for="contact in infoData.contacts.contacts"
       :key="contact"
-      class="flex items-center gap-3 pl-7 py-2 text-base_true_gray cursor-pointer"
+      class="flex items-center gap-3 pl-7 py-2 text-base_true_gray"
     >
       <UIcon
         v-if="contact.charAt(0) == '+'"

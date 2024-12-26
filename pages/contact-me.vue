@@ -5,16 +5,18 @@
     <Form />
   </div>
   <!-- DESKTOP VERSION -->
-  <div v-else class="flex bg-portfolio-primary-50 h-[84vh]">
-    <div class="border-r border-lines w-2/12 h-full overflow-y-auto">
+  <div v-else class="flex bg-portfolio-primary-50 h-screen">
+    <div
+      class="border-r border-lines w-2/12 md:w-[230px] xl:w-2/12 h-full overflow-y-auto"
+    >
       <FindMe />
     </div>
     <div
       class="w-5/12 border-r border-lines h-full overflow-y-auto text-base text-base_true_gray"
     >
-      <div class="h-[41px] border-b border-lines">
+      <div class="h-[41px] md:h-[37px] xl:h-[41px] border-b border-lines">
         <div
-          class="flex justify-between items-center px-6 border-r border-lines h-full w-1/3"
+          class="flex justify-between items-center px-6 md:px-3 xl:px-6 border-r border-lines h-full w-1/3 md:w-[200px] xl:w-1/3"
         >
           contacts
           <button @click="resetForm" class="flex items-center justify-center">
@@ -22,13 +24,13 @@
           </button>
         </div>
       </div>
-      <div class="px-10 py-5">
+      <div class="px-10 md:px-5 lg:px-7 xl:px-10 py-5">
         <Form ref="formRefs" />
       </div>
     </div>
     <div class="w-5/12 h-full overflow-y-auto">
-      <div class="h-[41px] border-b border-lines"></div>
-      <div class="px-10 py-5">
+      <div class="h-[41px] md:h-[37px] xl:h-[41px] border-b border-lines"></div>
+      <div class="px-10 md:px-5 lg:px-7 xl:px-10 py-5">
         <CodeSnippet :snippet-data="formExample" />
       </div>
     </div>

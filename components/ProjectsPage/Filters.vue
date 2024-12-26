@@ -1,8 +1,10 @@
 <template>
-  <div class="flex flex-col gap-1 pb-10 text-base md:text-sm xl:text-base text-base_true_gray">
+  <div
+    class="flex flex-col gap-1 pb-10 text-base md:text-sm xl:text-base text-base_true_gray"
+  >
     <div>
       <div
-        class="flex items-center gap-3 pl-7 py-2 text-base_true_white"
+        class="flex items-center gap-3 pl-7 md:pl-2 xl:pl-7 py-2 text-base_true_white cursor-pointer"
         :class="
           commonStore.isTablet ? 'bg-lines' : 'bg-inherit border-b border-lines'
         "
@@ -22,7 +24,11 @@
       </div>
     </div>
     <div v-if="isOpen" class="flex flex-col gap-4 pt-4">
-      <div v-for="filter in filterData" :key="filter.id" class="pl-7">
+      <div
+        v-for="filter in filterData"
+        :key="filter.id"
+        class="pl-7 md:pl-2 xl:pl-7"
+      >
         <CheckBox
           v-model="selectedFilters[filter.id as keyof typeof selectedFilters]"
           :icon="filter.icon"
