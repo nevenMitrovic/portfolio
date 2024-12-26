@@ -3,14 +3,11 @@
     class="border-t h-[56px] border-lines flex justify-between items-center"
   >
     <div
-      class="pl-4 h-full md:border-r border-lines flex items-center md:w-[150px] text-base text-base_true_gray"
+      class="pl-4 h-full md:border-r border-lines flex items-center md:w-[150px] text-base md:text-sm lg:text-base text-base_true_gray"
     >
       <p>{{ footerData.title }}</p>
     </div>
-    <div
-      v-if="commonStore.isMobile || commonStore.isTablet"
-      class="flex items-center justify-center"
-    >
+    <div v-if="commonStore.isTablet" class="flex items-center justify-center">
       <div
         v-for="(item, index) in footerData.social"
         :key="index"
@@ -21,7 +18,10 @@
           class="p-3 flex items-center justify-center"
           target="_blank"
         >
-          <UIcon :name="item.icon" class="w-5 h-5" />
+          <UIcon
+            :name="item.icon"
+            class="w-5 h-5 md:w-4 md:h-4 lg:w-5 lg:h-5"
+          />
         </NuxtLink>
       </div>
     </div>
@@ -37,7 +37,10 @@
             class="p-3 flex items-center justify-center"
             target="_blank"
           >
-            <UIcon :name="item.icon" class="w-5 h-5" />
+            <UIcon
+              :name="item.icon"
+              class="w-5 h-5 md:w-4 md:h-4 lg:w-5 lg:h-5"
+            />
           </NuxtLink>
         </div>
       </div>
@@ -45,7 +48,10 @@
         class="flex items-center justify-center text-base_true_gray hover:text-white border-l border-lines w-fit"
       >
         <NuxtLink to="/contact-me" class="p-3 flex items-center justify-center">
-          <UIcon name="ri:mail-add-fill" class="w-5 h-5" />
+          <UIcon
+            name="ri:mail-add-fill"
+            class="w-5 h-5 md:w-4 md:h-4 lg:w-5 lg:h-5"
+          />
         </NuxtLink>
       </div>
     </div>
