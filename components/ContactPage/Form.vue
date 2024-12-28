@@ -8,7 +8,7 @@
       v-bind="nameAttrs"
       :id="'name'"
       :name="'name'"
-      v-model="name!"
+      v-model="(name as string)"
       :label="'_name'"
       success-message="Nice to meet you!"
     />
@@ -17,7 +17,7 @@
       v-bind="emailAttrs"
       :id="'email'"
       :name="'email'"
-      v-model="email!"
+      v-model="(email! as string)"
       :label="'_email'"
       success-message="Your email is valid!"
     />
