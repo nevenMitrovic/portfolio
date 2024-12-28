@@ -8,7 +8,7 @@
       v-bind="nameAttrs"
       :id="'name'"
       :name="'name'"
-      v-model="(name as string)"
+      v-model="nameModel"
       :label="'_name'"
       success-message="Nice to meet you!"
     />
@@ -17,7 +17,7 @@
       v-bind="emailAttrs"
       :id="'email'"
       :name="'email'"
-      v-model="(email! as string)"
+      v-model="emailModel"
       :label="'_email'"
       success-message="Your email is valid!"
     />
@@ -92,6 +92,8 @@ import { toTypedSchema } from "@vee-validate/yup";
 
 const config = useRuntimeConfig();
 
+const nameModel = ref<string>("");
+const emailModel = ref<string>("");
 const status = ref<string>("");
 const loading = ref<boolean>(false);
 
