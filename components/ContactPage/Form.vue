@@ -1,21 +1,42 @@
 <template>
   <form
     v-if="status === ''"
-    @submit.prevent="sendEmail"
+    @submit.prevent="onSubmit"
     class="flex flex-col gap-4 px-7 md:px-0"
   >
-    <Input :id="'name'" :name="'name'" v-model="name" :label="'_name'" />
-    <Input :id="'email'" :name="'email'" v-model="email" :label="'_email'" />
+    <Input
+      v-bind="nameAttrs"
+      :id="'name'"
+      :name="'name'"
+      v-model="name!"
+      :label="'_name'"
+      success-message="Nice to meet you!"
+    />
+    <div class="text-red-500 text-xs md:text-sm">{{ errors.name }}</div>
+    <Input
+      v-bind="emailAttrs"
+      :id="'email'"
+      :name="'email'"
+      v-model="email!"
+      :label="'_email'"
+      success-message="Your email is valid!"
+    />
+    <div class="text-red-500 text-xs md:text-sm">{{ errors.email }}</div>
     <div>
       <label :for="'message'" class="text-base_true_gray text-base block mb-1">
         _message:
       </label>
       <textarea
+        v-bind="messageAttrs"
         name="message"
         :rows="6"
         class="border border-lines bg-transparent w-full rounded-md focus:outline-none focus:ring-0 focus:shadow-md focus:shadow-base_true_gray/30 text-base_true_gray py-2 px-4"
         v-model="message"
+        success-message="I'll reply to you soon!"
       />
+      <div class="text-red-500 text-xs md:text-sm py-2">
+        {{ errors.message }}
+      </div>
     </div>
     <div>
       <button
@@ -65,12 +86,12 @@
 <script setup lang="ts">
 import Input from "./Input.vue";
 import emailjs from "emailjs-com";
+import * as Yup from "yup";
+import { useForm } from "vee-validate";
+import { toTypedSchema } from "@vee-validate/yup";
 
 const config = useRuntimeConfig();
 
-const name = ref<string>("");
-const email = ref<string>("");
-const message = ref<string>("");
 const status = ref<string>("");
 const loading = ref<boolean>(false);
 
@@ -110,6 +131,24 @@ const sendEmail = async () => {
     console.log(status.value);
   }
 };
+
+const schema = toTypedSchema(
+  Yup.object().shape({
+    name: Yup.string().required(),
+    email: Yup.string().email().required(),
+    message: Yup.string().required(),
+  })
+);
+const { errors, defineField, handleSubmit } = useForm({
+  validationSchema: schema,
+});
+const [email, emailAttrs] = defineField("email");
+const [name, nameAttrs] = defineField("name");
+const [message, messageAttrs] = defineField("message");
+
+const onSubmit = handleSubmit(() => {
+  sendEmail();
+});
 
 defineExpose({
   resetForm,
