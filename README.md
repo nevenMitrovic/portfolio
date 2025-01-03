@@ -1,76 +1,29 @@
-# Nuxt Minimal Starter
+# Portfolio 🌟
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A sleek, modern, and responsive portfolio website built with **Nuxt.js**. This project showcases personal projects, skills, and experiences in a visually appealing and professional manner.
 
-## Setup
+---
 
-Make sure to install dependencies:
+## Features
 
-```bash
-# npm
-npm install
+- **Showcase Projects**: Highlight your key projects with descriptions and links.
+- **About Section**: Introduce yourself with a professional bio.
+- **Skills & Tools**: Display your technical skills and tools used.
+- **Contact Form**: Allow visitors to get in touch directly from the website.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop devices.
 
-# pnpm
-pnpm install
+---
 
-# yarn
-yarn install
+## Website
 
-# bun
-bun install
-```
+- https://nevenmitrovic.netlify.app/
 
-## Development Server
+---
 
-Start the development server on `http://localhost:3000`:
+## Tech Stack
 
-```bash
-# npm
-npm run dev
+- **Nuxt.js**: Frontend Framework
+- **TypeScript**: Provides static typing to enhance code reliability and maintainability
+- **Tailwind CSS**: For styling
 
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-# portfolio
+---
