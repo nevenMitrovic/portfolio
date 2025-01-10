@@ -114,7 +114,7 @@ export const filesData: FileDataType[] = [
   },
   {
     id: "code-by-comtrade",
-    data: "At the beginning of 2024, I completed a specialized Frontend Development course at Comtrade with a grade of 10 (excellent)."
+    data: "At the beginning of 2024, I completed a specialized Frontend Development course at Comtrade with a grade of 10 (excellent).",
   },
   {
     id: "resume",
@@ -158,6 +158,7 @@ export const filterData: FilterDataType[] = [
   { id: "nuxt", icon: "ri:vuejs-line" },
   { id: "express", icon: "ri:nodejs-line" },
   { id: "nest", icon: "ri:nodejs-line" },
+  { id: "vanilla", icon: "ri:javascript-fill" },
 ];
 
 export const projectCardsData: ProjectCardType[] = [
@@ -194,6 +195,13 @@ export const projectCardsData: ProjectCardType[] = [
     img: "/img/portfolio.png",
     description: "My official website to showcase my skills and contact me.",
     link: "https://github.com/nevenMitrovic/portfolio",
+  },
+  {
+    id: "infinitely-nested-comments",
+    tags: [{ id: "vanilla", color: "vanilla_yellow", icon: "ri:javascript-fill" }],
+    img: "/img/vanilla.png",
+    description:"Vanilla JS for infinite nested comments.",
+    link: "https://github.com/nevenMitrovic/infinitely-nested-comments",
   },
 ];
 

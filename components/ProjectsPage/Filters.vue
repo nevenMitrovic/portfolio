@@ -61,6 +61,7 @@ const selectedFilters = reactive({
   nuxt: false,
   express: false,
   nest: false,
+  vanilla: false,
 });
 
 const toggleVisibility = (): void => {

@@ -8,7 +8,11 @@
     </div>
     <div
       class="relative flex flex-col justify-center bg-portfolio-primary-100 border border-lines rounded-xl overflow-hidden"
-      :class="commonStore.isTablet ? 'max-w-[291px] max-h-[328px]' : 'max-w-[370px] max-h-[370px]'"
+      :class="
+        commonStore.isTablet
+          ? 'max-w-[291px] max-h-[328px]'
+          : 'max-w-[370px] max-h-[370px]'
+      "
     >
       <div
         class="flex items-center justify-center gap-1 absolute top-3 right-3"
@@ -22,11 +26,7 @@
         </div>
       </div>
       <div class="border-b border-lines">
-        <img
-          :src="props.img"
-          :alt="props.id"
-          class="w-full h-full"
-        />
+        <img :src="props.img" :alt="props.id" class="w-full h-full" />
       </div>
       <div class="px-8 py-6 text-base_true_gray">
         {{ props.description }}
@@ -58,5 +58,6 @@ const colorVariants = {
   node_green: "bg-node_green",
   vue_green: "bg-vue_green",
   react_blue: "bg-react_blue",
+  vanilla_yellow: "bg-yellow-500",
 };
 </script>
