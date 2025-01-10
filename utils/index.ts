@@ -18,6 +18,8 @@ export const agoCalculator = (month: MonthIndex, year: Year): string => {
     if (month > currentMonth) {
       yearResult = currentYear - year - 1;
       monthResult = 12 - (month - currentMonth);
+
+      if (yearResult === 0) return monthStringResult(monthResult);
       return `${yearStringResult(yearResult)} and ${monthStringResult(
         monthResult
       )}`;
@@ -27,6 +29,7 @@ export const agoCalculator = (month: MonthIndex, year: Year): string => {
     } else {
       yearResult = currentYear - year;
       monthResult = currentMonth - month;
+      if (yearResult === 0) return monthStringResult(monthResult);
       return `${yearStringResult(yearResult)} and ${monthStringResult(
         monthResult
       )}`;
